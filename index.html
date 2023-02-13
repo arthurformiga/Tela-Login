@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Página de Login</title>
+</head>
+
+<body>
+        <header>
+              <h2>Login</h2>
+        </header>
+  
+    <div id="container">
+        
+
+        <fieldset class="form">
+           <label>Usuário</label>  <br> 
+           <input type="datetime" name="usuario" id="user" required><br>
+          
+            <label for="senha">Senha</label> <br>
+            <input type="password" name="senha" id="password" required> <br>
+            <button class="submit" onclick="submit()">Login</button> <br>
+            <span class="eas">Esqueceu a senha?</span>
+            <span id="msg"></span>
+        </fieldset>
+    </div>
+        
+
+  <script>
+
+    let user=document.getElementById('user')
+    let password=document.getElementById('password')
+    let login=document.getElementsByName('submit')
+    let msg= document.getElementById('msg')
+
+
+    function submit(){
+        let user= document.getElementById('user').value
+        let password=document.getElementById('password').value
+        let login=document.getElementsByClassName('submit')
+        let msg=document.getElementById('msg')
+
+        user=String(user)
+        password=Number(password)
+
+        if(user==='' || password===0){
+            alert('Preencha o campo vazio!')
+        }  
+       else if(user.length<7){
+            alert('Impossível! Nome de usuário muito curto.')
+
+        }else{
+             msg.innerHTML='Login feito com sucesso!'
+        }  
+
+    }
+
+
+   
+  </script>
+</body>
+</html>
